@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mocap": "../../components/mocap/index",
+    "tool-bar": "../../components/tool-bar/index",
+    "room": "./../../components/room/index"
+  }
+}

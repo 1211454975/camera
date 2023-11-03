@@ -1,0 +1,15 @@
+<view class="panel-container">
+  <view class="panel-header">
+    <view class="panel-title">{{curPanel.title||"title"}}</view>
+    <view class="panel-header-toolbar">
+      <van-icon name="add" bindtap="handlePanelMenu" data-menu="add"/>
+      <van-icon name="setting"  bindtap="handlePanelMenu" data-menu="setting"/>
+      <van-icon name="delete"  bindtap="handlePanelMenu" data-menu="delete"/>
+    </view>
+  </view>
+  <view class="panel-body">
+    <view wx:for="{{panel.widgets}}" style="display: flex;justify-content: center;margin-bottom:20px;">
+      <widget widget="{{item}}" style="width:90%;margin:5px 10px;"></widget>
+    </view>
+  </view>
+</view>

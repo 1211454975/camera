@@ -1,0 +1,21 @@
+.widget-container{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+
+}
+.widget-header{
+  position: relative;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: center;
+}
+.widget-header-toolbar{
+  position: absolute;
+  top:0px;
+  right:0px;
+}
+
+.widget-body{
+  min-height:100px;
+}

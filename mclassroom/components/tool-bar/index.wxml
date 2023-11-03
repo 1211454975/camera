@@ -1,0 +1,22 @@
+<!--components/tool-bar/index.wxml-->
+<view style="margin:0 20px;display:flex;justify-content:space-between;">
+
+  <view style="display:flex;">
+    <view wx:for="{{recorderMenus}}" wx:key="index" bindtap="{{item.action}}" data-index="{{index}}">
+      <image src="../../assets/icons/{{item.icon}}.png" style="width:20px;height:20px;" />
+    </view>
+  </view>
+  <view style="display:flex;">
+    <view wx:for="{{menus}}" wx:key="index" bindtap="{{item.action}}" data-index="{{index}}">
+      <image src="../../assets/icons/{{item.icon}}.png" style="width:20px;height:20px;" />
+    </view>
+  </view>  
+</view>
+<dialog visible="{{menus[curIndex].dlgVisible}}" title="{{title}}">
+  <vrm-list wx:if="{{menus[curIndex].code==='avatar'}}" bindselect="handleVrmChange"/>
+  <bg-list wx:if="{{menus[curIndex].code=='background'}}" bindselect="handleBackgroundChange"></bg-list>
+  <deco-list wx:if="{{menus[curIndex].code=='decoration'}}" bindselect="handleDecorationChange"></deco-list>
+  <items-list wx:if="{{menus[curIndex].code=='item'}}" bindselect="handleItemChange"></items-list>
+  <sys-setting wx:if="{{menus[curIndex].code=='system'}}" bind:change="handleSysSettingChange">
+  </sys-setting>
+</dialog>

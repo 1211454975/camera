@@ -1,0 +1,27 @@
+
+<mocap rule="{{rule}}" bind:toggle-plugin="handleTogglePlugin"
+bind:test="handleTest">
+<plugin-dialog  visible="{{togglePluginDialog}}" title="选择插件*"  style="height:20%" bindclose="handleTogglePlugin"
+wx:if="{{togglePluginDialog}}" >
+  
+<scroll-view wx:if="{{togglePluginDialog}}" scroll-y="true" style="height: 450rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <van-grid column-num="3">
+    <van-grid-item use-slot wx:for="{{ruleList}}" wx:key="index" icon="photo-o" text="{{item.name}}" bind:click="handleSelectPlugin" data-item="{{item}}">
+      <image style="width:30px;height:30px;" 
+      src="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg"/>
+      <text>{{item.name}}</text>
+    </van-grid-item>
+  </van-grid>
+
+</scroll-view>
+
+  
+</plugin-dialog>
+
+<plugin-dialog wx:if="{{test}}" visible="{{test}}" title="测试*"  style="height:20%" bindclose="handleTest">
+  <view wx:if="{{test}}">
+    <text bindtap="handleTimeMotion">TestTime</text>
+    <text bindtap="handleCountMotion">TestCount</text>
+  </view>
+</plugin-dialog>
+</mocap>

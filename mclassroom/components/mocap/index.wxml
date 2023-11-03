@@ -1,0 +1,21 @@
+<view style="position:relative;">
+  <canvas style="height:{{height}}px;" class="webgl" type="webgl" id="gl" bindtouchstart="onTX" bindtouchmove="onTX" bindtouchend="onTX"></canvas>
+  <view style="position:absolute;top:0px;left:0px;" >
+    <view bindtap="importVRM">loadVRM</view>
+    <view bindtap="reset">Reset</view>
+    <view bindtap="playWithBVH" data-seq="0">BVH0</view>
+    <view bindtap="playWithBVH" data-seq="1">BVH1</view>
+    <view bindtap="playWithBVH" data-seq="2">BVH2</view>
+  </view>
+  <view style="position:absolute;top:0px;right:0px;" >
+    <view bindtap="nearCamera">Near</view>
+    <view bindtap="farCamera">Far</view>
+    <view bindtap="test">Test</view>
+    <view bindtap="move">Move</view>
+    <view bindtap="rotation">Rotation</view>
+    <view bindtap="autoRotation">AutoRotation</view>
+    <view bindtap="upObj">upObj</view>
+    <view bindtap="stepBVH">stepBVH</view>
+  </view>
+  <slot></slot>
+</view>

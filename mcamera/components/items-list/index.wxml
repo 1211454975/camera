@@ -1,0 +1,77 @@
+<!-- 道具 -->
+<!-- 道具功能类似游戏场景中道具，可以有助于虚拟人使用之
+完成相关的体育动作
+ -->
+<van-tabs active="common">
+  <van-tab title="公共" name="common" >
+    <view style="height:150px; overflow-y:scroll;">
+      <van-grid>
+        <van-grid-item icon="photo-o" text="文字" bindtap="handleSelect"/>
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+
+
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+
+        
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+      </van-grid>
+    </view>
+  </van-tab>
+  <van-tab title="我的" name="mine">
+    <view style="height:150px; overflow-y:scroll;">
+      <van-grid>
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item icon="photo-o" text="文字" />
+        <van-grid-item use-slot wx:for="{{ 3 }}" wx:for-item="index">
+          <image
+            style="width: 40px; height: 40px;"
+            src="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg"
+          />
+        </van-grid-item>
+        <van-grid-item use-slot bindtap="handleAdd">
+          <view style="width: 40px; height: 40px;background-color:green;display:flex;justify-content:center;align-items:center;"><view>+</view></view>
+        </van-grid-item>
+      </van-grid>
+    </view>
+  </van-tab>
+</van-tabs>
+<dialog visible="{{addVisible}}" title="{{addTitle}}">
+  <view>
+    <van-cell-group>
+      <van-field
+        value="{{ name }}"
+        required
+        clearable
+        label="名称"
+        icon="question-o"
+        placeholder="请输入名称"
+      />
+      <van-field
+        value=""
+        label="文件上传"
+        left-icon="contact"
+        disabled
+        border="{{ false }}"
+      />
+      
+      <van-uploader file-list="{{ urlList }}" deletable="{{ true }}" max-count="1" bind:after-read="afterRead"/>
+    </van-cell-group>
+
+    <van-button type="primary" bindtap="submitForm">提交</van-button>
+  </view>
+</dialog>

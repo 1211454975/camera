@@ -1,0 +1,24 @@
+
+
+<scroll-view
+    class="product-list"
+    type="custom"
+    scroll-y
+    show-scrollbar="{{false}}"
+  >
+  <sticky-section wx:for="{{curList}}" wx:key="index">
+    <sticky-header>
+      <view class="product-group">{{item.header}}</view>
+    </sticky-header>
+    <list-view>
+      <view class="product-item" wx:for="{{item.data}}" wx:key="index" wx:for-item="subItem">
+        <image class="product-image" fade-in src="{{subItem.cover}}"></image>
+        <view class="product-info">
+          <view class="product-name">{{subItem.name}}</view>
+          <view class="product-comment"><text>{{subItem.intro}}</text></view>
+          <view class="product-data"><text>{{subItem.viewNum||0}}人用过</text><text>好评度100%</text></view>
+        </view>
+      </view>
+    </list-view>
+  </sticky-section>
+</scroll-view>

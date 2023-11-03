@@ -1,0 +1,32 @@
+<!--pages/index/card/card.wxml-->
+<view>
+  <block wx:for="{{curList}}" wx:key="index" >
+    <van-card
+      thumb="{{item.cover}}" 
+    >
+      <view slot="title">
+        <view class="card_title">{{item.name}}</view>
+      </view>
+      <view slot="desc">
+        <view class="card_desc">
+        <view>类型:{{item.type}}</view>
+        <view>浏览{{item.num||0}}次</view>
+        </view>
+      </view>
+      <view class="card_tag" slot="tags">
+        <block wx:for="{{item.tags}}" wx:for-item="tagItem" wx:key="tagIndex">
+          <van-tag class="card_tag_child" plain round size="medium" type="primary">{{tagItem}}</van-tag>
+        </block>
+      </view>
+      <view slot="bottom">
+        <view style="display: flex;justify-content:space-between;padding:4px 4px" wx:if="{{editable}}" class="purchase_btn">
+          <van-icon name="setting" data-item="{{item}}" bindtap="handleDesign"/>
+          <van-icon name="edit" data-item="{{item}}" bindtap="handleEdit"/>
+          <van-icon name="delete" data-item="{{item}}" bindtap="handleDelete"/>
+        </view>
+        <view wx:else class="purchase_btn" bindtap="handleSelected" data-item="{{item}}">进入</view>
+        
+      </view>
+    </van-card>
+  </block>
+</view>

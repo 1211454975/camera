@@ -1,0 +1,21 @@
+.panel-container{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+
+}
+.panel-header{
+  position: relative;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: center;
+}
+.panel-header-toolbar{
+  position: absolute;
+  top:0px;
+  right:0px;
+}
+
+.panel-body{
+  min-height:250px;
+}

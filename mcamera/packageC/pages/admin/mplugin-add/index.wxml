@@ -1,0 +1,44 @@
+<!--
+对于创建的插件，需要有后台进行审核一下，确保是可以正确运行的
+
+-->
+<view>
+  <van-cell-group inset>
+    <van-cell title="类别" model:value="{{formData.cateName}}"  is-link arrow-direction="down" bind:click="handleCate">
+    </van-cell>
+    <van-cell title="用途" model:value="{{formData.usageName}}"  is-link arrow-direction="down" bind:click="handleUsage">
+    </van-cell>
+    <van-cell title="名称">
+      <van-field data-type="name" bind:change="formItemChange"
+        model:value="{{ formData.name }}"
+        placeholder="请输入名称"
+        border="{{ false }}"/>
+    </van-cell>
+    <van-cell title="标签">
+      <van-field data-type="tags" bind:change="formItemChange"
+        model:value="{{ formData.tags }}"
+        placeholder="请输入标签,分号隔开"
+        border="{{ false }}"/>
+    </van-cell>
+    <van-cell title="封面">
+      <van-field data-type="cover" bind:change="formItemChange"
+        model:value="{{ formData.cover }}"
+        placeholder="请输入封面"
+        border="{{ false }}"/>
+    </van-cell>
+  </van-cell-group>
+  <view style="display: flex;justify-content: center;">
+    <van-button style="margin:50px auto;" type="primary" bindtap="handleSubmit">确定</van-button>
+  </view>
+  <van-action-sheet
+    show="{{ showCate }}"
+    actions="{{ cateList }}"
+    bind:select="onSelectCate"
+  />
+
+  <van-action-sheet
+    show="{{ showUsage }}"
+    actions="{{ usageList }}"
+    bind:select="onSelectUsage"
+  />
+</view>

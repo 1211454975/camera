@@ -1,0 +1,75 @@
+<!--packageC/pages/mine/user-edit/index.wxml-->
+<block wx:if="{{type=='username'}}">
+  <view  style="margin:0px 15px;">修改名称:</view>
+  <vant-cell-group>
+    <van-field
+      value="{{ user.name }}"
+      placeholder="请输入用户名"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+
+  </vant-cell-group>
+  <view style="display: flex;justify-content: center;">
+    <van-button style="margin:50px auto;" type="primary" bindtap="updateUserInfo">更新</van-button>
+  </view>
+</block>
+<block wx:if="{{type=='mobile'}}">
+  <view  style="margin:0px 15px;">修改电话:</view>
+  <vant-cell-group>
+    <van-field
+      value="{{ user.mobile }}"
+      placeholder="请输入移动号码"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+
+  </vant-cell-group>
+  <view style="display: flex;justify-content: center;">
+    <van-button style="margin:50px auto;" type="primary" bindtap="updateUserInfo">更新</van-button>
+  </view>
+</block>
+
+<block wx:if="{{type=='email'}}">
+  <view  style="margin:0px 15px;">修改邮箱:</view>
+  <vant-cell-group>
+    <van-field
+      value="{{ user.email }}"
+      placeholder="请输入邮箱"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+
+  </vant-cell-group>
+  <view style="display: flex;justify-content: center;">
+    <van-button style="margin:50px auto;" type="primary" bindtap="updateUserInfo">更新</van-button>
+  </view>
+</block>
+
+<block wx:if="{{type=='password'}}">
+  <view  style="margin:0px 15px;">修改密码:</view>
+  <vant-cell-group>
+    <van-field
+      value="{{ pwd.oldpassword }}"
+      placeholder="请输入老密码"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+    <van-field
+      value="{{ pwd.newpassword }}"
+      placeholder="请输入新密码"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+    <van-field
+      value="{{ pwd.repassword }}"
+      placeholder="请再此输入新密码"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+
+  </vant-cell-group>
+  <view style="display: flex;justify-content: center;">
+    <van-button style="margin:50px auto;" type="primary" bindtap="updateUserPwd">更新</van-button>
+  </view>
+</block>

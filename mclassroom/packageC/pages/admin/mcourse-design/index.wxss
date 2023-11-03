@@ -1,0 +1,38 @@
+.design-container{
+  position: relative;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+}
+.toolbar{
+  position: absolute;
+  bottom: 20px;
+  right:20px;
+}
+.panel-container{
+  margin: 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+panel{
+  width:80%;
+}
+
+/*提交按钮样式*/
+/* .submitbtn{
+  color:#1989fa;
+  position: relative;
+  top:2rpx;
+  border: none;
+  float: right;
+  background-color: #fff;
+  width: 50%;
+  height: 100%;
+} */
+/*清除按钮边框*/
+/* .submitbtn::after {
+  border: none
+} */

@@ -1,0 +1,5 @@
+<!--plugin/components/audit/index.wxml-->
+<view style="position: relative;">
+<canvas id="canvas" type="2d" class="canvas" style="width: {{width}}px;height:{{height}}px;z-index:8;" />
+<button bindtap="save" style="display:none;position: absolute;top:50px;left:70px;z-index:9">保存到相册</button>
+</view>

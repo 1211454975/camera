@@ -1,0 +1,28 @@
+/* pages/mine/poster/index.wxss */
+.circle0 {
+  background: #456BD9;
+  border: 0.1875em solid #0F1C3F;
+  border-radius: 50%;
+  box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+  height: 5em;
+  width: 5em;
+}
+.circle1 {
+  fill: #a5d945;
+  stroke: #0F1C3F;
+  stroke-width: 0.1875em;
+}
+
+.circle2 {
+  background-image: radial-gradient(circle, #456BD9, #456BD9 66%, transparent 66%);
+  height: 5em;
+  width: 5em;
+}
+.circle{
+  width: 100px;      
+  height: 100px;      
+  background-color:red;      
+  border-radius: 50%;      
+  -moz-border-radius: 50%;      
+  -webkit-border-radius: 50%;
+}

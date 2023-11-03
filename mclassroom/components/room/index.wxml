@@ -1,0 +1,17 @@
+<!--房间组件-->
+<!--主要用于用户端-->
+<mocap>
+    <toolbar style="width:100%;position:absolute; bottom:10px;left:0px;" 
+      bindtest="handleTest"
+      bindsettingChange="handleSettingChange"
+      bindvrmChange="handleVrmChange"
+      bindbackgroundChange="handleBackgroundChange"
+      binddecorationChange="handleDecorationChange"
+      binditemChange="handleItemChange"/>
+    <vcamera 
+      id="vcamera" 
+      auto="{{false}}" 
+      style="background-color:green;position:absolute;{{vcameraSetting.vcameraPosition === 'upperLeft'?'left':'right'}}:0px;top:0px;border-radius:10px;"
+      bindmotion="handleMotion"/>
+</mocap>
+  

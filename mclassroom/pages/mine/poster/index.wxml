@@ -1,0 +1,14 @@
+<!--测试worklet-->
+<view style="margin-top:100px;">
+  
+
+</view>
+<pan-gesture-handler onGestureEvent="handlepan">
+    
+    <view>
+      <div class="circle" style="margin-top:{{y}}px;margin-left:{{x}}px;"></div>
+    </view>
+    
+
+  </pan-gesture-handler>
+

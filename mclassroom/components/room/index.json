@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mocap":"./../mocap/index",
+    "vcamera":"./../vcamera/index",
+    "toolbar":"./../tool-bar/index"
+  }
+}

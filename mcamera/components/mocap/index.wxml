@@ -1,0 +1,57 @@
+
+<view class="human-detection" data-weui-theme="{{theme}}">
+    <view>
+      <canvas type="webgl" id="webgl" style="width: {{width}}px; height: {{height}}px" bindtouchend="onTouchEnd">
+      </canvas>
+      <audit class="body-marker"/>
+    </view>
+    
+    <view class="statbar">
+      <text class="statbar-timer" >{{timer}}</text>
+      <text class="statbar-count"  wx:if="{{curRule.type=='count'}}">10</text>
+    </view>
+    <view class="toolbar">
+      <text class="iconfont  icon-xiangjifanzhuan toolbar-item" style="margin-left:10px;" bindtap="toggleCamera">切换</text>
+      <text class="iconfont  icon-xiangjifanzhuan toolbar-item" style="margin-left:10px;" bindtap="showPluginDialog">插件</text>
+      <text class="iconfont icon-shezhi toolbar-item" style="margin-right:10px;" bindtap="openSetting">设置</text>
+      <text class="iconfont icon-shezhi toolbar-item" style="margin-right:10px;" bindtap="openTest">测试</text>
+      
+    </view>
+    <!--设置对话框-->
+    <view class="setting-container" wx:if="{{enableOpenSetting}}">
+      <view class="setting-header" style="width:100%">配置</view>
+      <view class="setting-body">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+          <view class="setting-item">
+            <text class="page-section-title">显示提示框: </text>
+            <switch name="switch" checked="{{enableTip}}" bindchange="enableTipChange"/>
+          </view>
+          <view class="setting-item">
+            <text class="page-section-title">显示规则提示框: </text>
+            <switch name="switch" checked="{{enableRuleTip}}" bindchange="enableRuleTipChange"/>
+          </view>
+          <view class="setting-item">
+            <text class="page-section-title">显示骨骼点: </text>
+            <switch name="switch" checked="{{enableBoneFrame}}" bindchange="enableBoneFrameChange"/>
+          </view>
+          <view class="setting-item">
+            <text class="page-section-title">显示人体框: </text>
+            <switch name="switch" checked="{{enableBodyFrame}}" bindchange="enableBodyFrameChange"/>
+          </view>
+        </form>
+      </view>
+      
+    </view>
+    <!--提示框-->
+    <view wx:if="{{enableTip}}" class="count-tip" style="height:20%">
+    提示：将摄像头对准人体, 检测到的人体将会被标记出识别框和人体部位标记点
+    </view>
+    <view wx:if="{{enableRuleTip}}" class="rule-tip" style="height:20%">
+    动作提示：\n1.将摄像头对准人体.\n2.检测到的人体将会被标记出识别框和人体部位标记点
+    </view>
+    <slot>
+      <plugin-dialog visible="{{showPluginListDialog}}" title="选择插件" wx:if="{{showPluginListDialog}}" class="" style="height:20%" bindclose="showPluginDialog"/>
+    </slot>
+    
+</view>
+

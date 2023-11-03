@@ -1,0 +1,32 @@
+<view class="setting-container">
+  <view class="setting-item">
+    <view>是否开启相机视频</view>
+    <van-switch checked="{{ vcameraChecked }}" bind:change="onVcameraChange" />
+  </view>
+  <view class="setting-item" wx:if="{{vcameraChecked}}">
+    <view>显示位置</view>
+    <van-radio-group direction="horizontal" value="{{ vcameraPosition }}" bind:change="onVcameraPositionChange">
+      <van-radio name="upperLeft">左上</van-radio>
+      <van-radio name="upperRight">右上</van-radio>
+    </van-radio-group>
+  </view>
+  <view class="setting-item" wx:if="{{vcameraChecked}}">
+    <view>相机方向</view>
+    <van-radio-group direction="horizontal" value="{{ vcameraDirection }}" bind:change="onVcameraDirectionChange">
+      <van-radio name="1">正向</van-radio>
+      <van-radio name="0">反向</van-radio>
+    </van-radio-group>
+  </view>
+  <view class="setting-item" wx:if="{{vcameraChecked}}">
+    <view>窗口大小</view>
+    <van-radio-group direction="horizontal" value="{{ vcameraSize }}" bind:change="onVcameraSizeChange">
+      <van-radio name="small">小</van-radio>
+      <van-radio name="medium">中</van-radio>
+      <van-radio name="large">半屏</van-radio>
+    </van-radio-group>
+  </view>
+  <view class="setting-item" wx:if="{{vcameraChecked}}">
+    <view>显示骨骼点</view>
+    <van-switch checked="{{ vcameraBone }}" bind:change="onVcameraBoneChange" />
+  </view>
+</view>

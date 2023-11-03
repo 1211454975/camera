@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-switch": "@vant/weapp/switch/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index"
+  }
+}

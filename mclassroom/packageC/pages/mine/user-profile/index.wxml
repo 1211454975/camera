@@ -1,0 +1,14 @@
+<view style="margin:0px 15px;">
+基本信息
+</view>
+<van-cell-group>
+  <van-cell title="账户名称" value="{{user.name}}" is-link link-type="navigateTo" url="../user-edit/index?type=username"/>
+  <van-cell title="手机号码" value="{{user.mobile}}" is-link link-type="navigateTo" url="../user-edit/index?type=mobile"/>
+  <van-cell title="邮箱" value="{{user.email}}" is-link link-type="navigateTo" url="../user-edit/index?type=email"/>
+</van-cell-group>
+<view style="margin:0px 15px;">
+修改密码
+</view>
+<vant-cell-group>
+  <van-cell title="密码" value="******" is-link link-type="navigateTo" url="../user-edit/index?type=password"/>
+</vant-cell-group>

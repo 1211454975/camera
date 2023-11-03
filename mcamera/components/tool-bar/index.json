@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "dialog":"./../dialog/index",
+    "vrm-list": "./../vrm-list/index",
+    "bg-list": "./../bg-list/index",
+    "deco-list": "./../deco-list/index",
+    "items-list": "./../items-list/index",
+    "sys-setting": "./../sys-setting/index"
+  }
+}

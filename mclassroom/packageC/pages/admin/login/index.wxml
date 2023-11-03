@@ -1,0 +1,32 @@
+<view class="login-container">
+  <view class="page-body">
+    <view style="display:flex;justify-content: center;align-items: center;margin-top:50px;">
+      <!-- <image style="width:20px;height:20px;" src="https://gitee.com/hawklink/motionsdk_oss/raw/master/logo.png" /> -->
+      <view style="text-align: center;font-size: 20px;font-weight: bold;">欢迎登陆</view>
+    </view>
+    <view style="margin:40px 0px;text-align: center;font-size: 10px;">您可以新建仪表盘、数据源，还可以查看用户等等相关信息</view>
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view  class="form">
+        <view class="row">
+          <text>账号</text>
+          <input value="18621919999" name="username" type="text" placeholder="请填写管理员账号" />
+        </view>
+        <view class="row">
+          <text>密码</text>
+          <input value="123456" name="password" type="password" placeholder="请填写管理员密码" />
+        </view>
+      </view>
+      
+      
+      <view class="redbtn-fixed">
+        <button formType="submit">登录</button>
+      </view>
+    </form>
+  </view>
+  <view style="font-size:8px;margin:0px auto;text-align:center;">
+  注意： 如果您没有管理员账号，请联系您公司相关负责人
+  </view>
+  <view class="copyright">
+    <view class="copyright-item">Powered By 联致软件 @2023</view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.10.23",
+    "threejs-miniprogram": "^0.0.8"
+  }
+}

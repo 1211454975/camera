@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mocap/index",
+    "pages/mine/base/index",
+    "pages/mine/audit/index",
+    "pages/mine/poster/index",
+    "pages/pcenter/index"
+  ],
+  "subPackages": [
+    {
+      "root": "packageC",
+      "pages": [
+        "pages/mine/base/index",
+        "pages/mine/user-profile/index",
+        "pages/mine/user-edit/index",
+        "pages/mine/user-code/index",
+        "pages/mine/account/index",
+        "pages/admin/login/index",
+        "pages/admin/home/index",
+        "pages/admin/cate-list/index",
+        "pages/admin/cate-add/index",
+        "pages/admin/usage-list/index",
+        "pages/admin/usage-add/index",
+        "pages/admin/mplugin-list/index",
+        "pages/admin/mplugin-add/index",
+        "pages/admin/mplugin-design/index",
+        "pages/admin/dever-list/index",
+        "pages/admin/dever-add/index",
+        "pages/admin/user-list/index",
+        "pages/admin/register/index"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true
+    }
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "demo.theme.json",
+  "tabBar": {
+    "color": "@tabBarColor",
+    "selectedColor": "@tabBarSelectedColor",
+    "borderStyle": "@tabBarBorderStyle",
+    "backgroundColor": "@tabBarBackgroundColor",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "@iconPathComponent",
+        "selectedIconPath": "@selectedIconPathComponent",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/pcenter/index",
+        "iconPath": "@iconPathComponent",
+        "selectedIconPath": "@selectedIconPathComponent",
+        "text": "插件中心"
+      },
+      {
+        "pagePath": "pages/mine/base/index",
+        "iconPath": "@iconPathAPI",
+        "selectedIconPath": "@selectedIconPathAPI",
+        "text": "我的"
+      }
+    ]
+  }
+}

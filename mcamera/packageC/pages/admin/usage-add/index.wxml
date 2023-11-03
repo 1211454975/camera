@@ -1,0 +1,23 @@
+<view>
+  <van-cell-group inset>
+    <van-cell title="编码">
+      <van-field data-type="code" bind:change="formItemChange"
+        model:value="{{ formData.code }}"
+        placeholder="请输入编码"
+        border="{{ false }}"
+      />
+      
+    </van-cell>
+    <van-cell title="名称">
+      <van-field data-type="name" bind:change="formItemChange"
+        model:value="{{ formData.name }}"
+        placeholder="请输入名称"
+        border="{{ false }}"
+      />
+    </van-cell>
+  </van-cell-group>
+  <view style="display: flex;justify-content: center;">
+    <van-button style="margin:50px auto;" type="primary" bindtap="handleSubmit">确定</van-button>
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "coach-list":"../../components/coach-list/index",
+    "course-list":"../../components/course-list/index"
+  },
+  "disableScroll": true,
+  "navigationStyle": "custom",
+  "renderer": "skyline",
+  "componentFramework": "glass-easel"
+}

@@ -1,0 +1,59 @@
+<view class="tenant">
+  <image class="tenant-logo" src="https://gitee.com/hawklink/motionsdk_oss/raw/master/images/action1.jpg"/>
+  <view class="tenent-summary">
+    <view>{{adminUser.name||'用户名称'}}</view>
+    <text>{{adminUser.comName||'租户名称'}}</text>
+    <view style="font-size: 12px;">{{adminUser.state}}</view>
+  </view>
+</view>
+
+<view class="home-card">
+  <view class="home-card-item" bindtap="toUsageList">
+    <text style="width:100%;text-align:center;">所有用途</text>
+    <view>{{homeCounts.usage_count}}</view>
+  </view>
+  <view class="home-card-item" bindtap="toMpluginList">
+    <text style="width:100%;text-align:center;">所有插件</text>
+    <view>{{homeCounts.plugin_count}}</view>
+  </view>
+  <view class="home-card-item" bindtap="toDeverList">
+    <text style="width:100%;text-align:center;">开发者</text>
+    <view>{{homeCounts.staff_count}}</view>
+  </view>
+  <view class="home-card-item" bindtap="toUserList">
+    <text style="width:100%;text-align:center;">用户数</text>
+    <view>{{homeCounts.user_count}}</view>
+  </view>
+</view>
+
+
+<view class='list'>
+  <view class='section'>
+        <navigator class='row' url='../mplugin-add/index'>
+          <view class='left'>
+            <image class='icon' src='https://gitee.com/hawklink/motionsdk_oss/raw/master/images/user/user-1-1.png'></image>
+            <text class='text'>新建插件</text>
+          </view>
+          <image class='arrow' src='https://gitee.com/hawklink/motionsdk_oss/raw/master/images/arrow-right.png'></image>
+        </navigator>
+  </view>
+  <view class='section'>
+      <navigator class='row' url='../dever-add/index'>
+        <view class='left'>
+          <image class='icon' src='https://gitee.com/hawklink/motionsdk_oss/raw/master/images/user/user-1-1.png'></image>
+          <text class='text'>添加开发者</text>
+        </view>
+        <image class='arrow' src='https://gitee.com/hawklink/motionsdk_oss/raw/master/images/arrow-right.png'></image>
+      </navigator>
+  </view>
+  <view class='section'>
+      <navigator class='row' url='../usage-add/index'>
+        <view class='left'>
+          <image class='icon' src='https://gitee.com/hawklink/motionsdk_oss/raw/master/images/user/user-1-1.png'></image>
+          <text class='text'>添加用途</text>
+        </view>
+        <image class='arrow' src='https://gitee.com/hawklink/motionsdk_oss/raw/master/images/arrow-right.png'></image>
+      </navigator>
+  </view>    
+</view>
+

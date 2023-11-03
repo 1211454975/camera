@@ -1,0 +1,63 @@
+<view class="design-container" style="position:relative;">
+  <view style="position: absolute;top:auto;width:97%;">
+    <scroll-view scroll-y="true" style="height: 1100rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="">
+    <view wx:if="{{panels.length==0}}" style="display: flex;justify-content: center;">
+      <image src="../../assets/icons/empty.png" style="width:60%;"/>
+    </view>
+    <block wx:else>
+      <view wx:for="{{panels}}" style="display: flex;justify-content: center;margin-bottom:20px;">
+        <panel panel="{{item}}"
+          bind:panelMenuSelected="handlePanelMenu" data-index="{{index}}">
+        </panel>
+      </view>
+    </block>
+    
+  </scroll-view>
+
+  </view>
+  <toolbar class="toolbar"
+    bind:menuSelected="handleMenuSelected"></toolbar>
+  <!--新建widget-->
+
+  <!--新建Panel对话框-->
+  <van-dialog
+    use-slot
+    title="新建面板"
+    show="{{ showWidget }}"
+    confirmButtonText="修改"
+    show-confirm-button="{{false}}"
+    show-cancel-button="{{false}}"
+    bind:close="onCloseAddWidget"
+    bind:confirm="onConfirmAddWidget"
+  >
+    <addWidget id="addWidget" panelId="{{panelId}}" wx:if="{{showWidget}}" style="width:80%;" bind:showPicker="handleShowPicker"
+    bind:submit="submitWidgetForm"/>
+
+    <!-- <form bindsubmit="submitForm">
+      
+      <van-cell-group>
+        <van-field
+          label="类别"
+          value="{{ type }}"
+          placeholder="请输入类型"
+          disabled
+          use-button-slot>
+          <van-button slot="button" size="small" type="primary" bindtap="openType">
+            选择
+          </van-button>
+        </van-field> 
+      </van-cell-group>
+      
+      <button type="submit" class="submitbtn">提交</button>
+    </form> -->
+
+  </van-dialog>
+
+</view>
+<van-action-sheet
+  z-index="9999"
+  show="{{ showPicker }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>

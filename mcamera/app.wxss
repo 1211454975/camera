@@ -1,0 +1,8 @@
+/**app.wxss**/
+.container {
+  flex: 1;
+  width: 100vw;
+  min-height: auto;
+  overflow: hidden;
+  margin-top:50px;
+}

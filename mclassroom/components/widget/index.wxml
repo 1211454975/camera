@@ -1,0 +1,13 @@
+<view class="widget-container">
+  <view class="widget-header">
+    <view class="widget-header-title">{{widget.title||"title"}}</view>
+    <view class="widget-header-toolbar">
+      <van-icon name="{{widget.sortIcon||'arrow-down'}}" bindtap="handleWidgetMenu" data-menu="{{widget.sortIcon}}"/>
+      <van-icon name="setting"  bindtap="handleWidgetMenu" data-menu="setting"/>
+      <van-icon name="delete"  bindtap="handleWidgetMenu" data-menu="delete"/>
+    </view>
+  </view>
+  <view class="widget-body">
+    <slot></slot>
+  </view>
+</view>

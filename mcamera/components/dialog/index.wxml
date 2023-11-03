@@ -1,0 +1,12 @@
+<view class="dialog-container" wx:if="{{curVisible}}">
+  <view wx:if="{{!hideHead}}" class="dialog-header" style="width:100%">
+    {{title}}
+    <view class="dialog-header-close" bindtap="handleClose">关闭</view>
+  </view>
+  <view class="dialog-body">
+    <slot>
+      <view>Dialog</view>
+    </slot>
+  </view>
+  
+</view>

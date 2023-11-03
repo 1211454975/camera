@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "card":"../../../../components/card/card"
+  },
+  "navigationBarTitleText": "课堂列表"
+}

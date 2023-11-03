@@ -1,0 +1,87 @@
+.tenant{
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 20px;
+  text-align: center;
+  background-color: #4a9bd6;
+}
+.tenant-logo{
+  width:50px;
+  height:50px;
+  border-radius: 25px;
+  background-color: #eee;
+  border: 1px white solid ;
+  margin-right:10px;
+}
+.tenent-summary{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.home-card{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 30px;
+}
+.home-card-item {
+  position: relative;  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 30rpx;
+  background-color: #E7EAF7;
+  border-radius: 10px;
+  width:100%;
+}
+.home-card-item:not(:last-child){
+  margin-right: 10px;
+}
+.list {
+  width:100%;
+}
+
+.list .section {
+  padding-left: 40rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.section button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.row {
+  position: relative;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx 0;
+}
+
+.row .left {
+  display: flex;
+  align-items: center;
+}
+
+.row .icon {
+  width: 40rpx;
+  height: 35rpx;
+  margin-right: 30rpx;
+}
+
+.row .arrow {
+  width: 13rpx;
+  height: 24rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+
+
+

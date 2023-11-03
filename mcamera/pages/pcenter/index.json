@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "plugin-list":"../../components/plugin-list/index",
+    "dever-list": "../../components/dever-list/index"
+  },
+  "disableScroll": true,
+  "navigationStyle": "custom",
+  "renderer": "skyline",
+  "componentFramework": "glass-easel"
+}

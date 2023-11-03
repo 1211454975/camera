@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "audit":"../audit/index",
+    "plugin-dialog":"../dialog/index"
+  },
+  "disableScroll": true,
+  "navigationBarTitleText": "实时人体检测",
+  "componentFramework": "glass-easel",
+  "renderer": "skyline"
+}

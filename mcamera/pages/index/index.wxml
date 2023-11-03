@@ -1,0 +1,76 @@
+<scroll-view class="container" scroll-y type="list">
+  <!-- <image src="https://res.wx.qq.com/op_res/FAyreGAUWqLJv09oZqfNbsZz1a4HO_JEUy5rIcjJrlKaGrOcbjL6i6BvGd8snx2csU2JI0UwcVZGE48Tzvf9aQ" mode="widthFix"></image> -->
+  <!--快速进入动感相机UI-->
+  <view style="display:flex;flex-direction:column;align-items: center;">
+    <image style="margin-top: 30px;height:50px;" src="../../assets/logo.png" mode="aspectFit"/>
+    <view style="text-align:center;">动感相机</view>
+    <view style="margin: 0px;text-align:center;font-size:12px;">健身小伙伴</view>
+  </view>
+  
+  <view class="quickly" bindtap="goMotionCamera">
+    
+    <view style="display:flex;flex-direction:row;justify-content:space-between;align-items: center;margin-bottom:10px;">
+      <image style="width:125px;height:100px;" mode="aspectFit" src="../../assets/mcamera.png"></image>
+      <image style="width:125px;height:60px;" mode="aspectFit" src="../../assets/mocap.png"></image>
+    </view>
+
+    <view class="quickly-title" style="display:flex;justify-content: space-between;margin: 0px 10px;">
+      <view >快来体验</view>
+      <image style="width:30px;height:30px;" src="../../assets/arrow-white.png" />
+    </view>
+  </view>
+  <!--产品公告-->
+  <view style="display: flex;flex-direction:row;margin: 0px 20px;">
+  <image src="../../assets/notice.png" style="margin: 0px 10px;width:20px;height:20px;"/>
+  <notice style="margin: 0px 10px;flex-basis: 95%;"/>
+</view>
+
+  <!--使用记录-->
+  <view style="display:flex;flex-direction:column;margin: 50px 30px;">
+    <view style="display: flex;flex-direction:row;">
+      <image src="../../assets/log.png" style="margin: 0px 0px;width:20px;height:20px;"/>
+      <view style="margin-left:20px;font-size:14px;">最近使用记录</view>
+    </view>
+    
+    <view wx:if="{{usedRecord!=null}}" style="font-size:12px;">- 你最近在{{usedRecord.addTime}}使用了{{usedRecord.duration}}分钟</view>
+    <view wx:else style="font-size:12px;">- 您第一次使用，欢迎您！</view>
+  </view>
+</scroll-view>
+
+
+<!-- 轮播图 -->
+<!-- <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{bg}}" style='height:{{height}}'>
+      <block wx:for="{{swiperImages}}" wx:key="index">
+        <swiper-item>
+            <image src="{{item}}" class="slide-image" mode="scaleToFill" bindload='imgH' style="display: block;width:100%;"/>
+        </swiper-item>
+      </block>
+</swiper> -->
+
+
+
+<!-- 推荐课程 -->
+<!-- <view style="display: flex;flex-direction: column;margin:20px 0;">
+  <view style="border-radius:10px;padding:0px 10px; margin-left:10px;margin-right:10px;margin-bottom:10px;background-color: #E7EAF7;width:80px;text-align: center;">最新插件</view>
+  <stackcard card-list="{{recoCardList}}" bind:selected="handleSelected"/>
+</view>
+<view style="display: flex;">
+  <image src="https://gitee.com/hawklink/motionsdk_oss/raw/master/images/notice.png" style="margin: 0px 10px;width:20px;height:20px;"/>
+  <notice style="margin: 0px 10px;flex-basis: 95%;"/>
+</view> -->
+
+<!-- 今日推荐 -->
+<view>
+  <!-- 标题 -->
+  <!-- <view class="title" style="display:flex;justify-content: space-between;margin-top:20px;margin-left:10px;margin-right:10px;">
+    <view style="border-radius:10px;padding:0px 10px; margin: 10px 0px;background-color: #E7EAF7;width:80px;text-align: center;">热门推荐</view>
+    <view bindtap="goCourses" style="display: flex;align-items: center;">
+      <view style="font-size: 14px;">更多</view>
+      <image src="https://gitee.com/hawklink/motionsdk_oss/raw/master/images/more.png" style="width:20px;height:20px;"></image>
+      
+    </view>
+  </view> -->
+  <!-- 在线课堂 -->
+  <!-- <card card-list="{{cardList}}" bind:selected="handleSelected"></card> -->
+</view>
+<!-- <wemark md="{{md}}" /> -->

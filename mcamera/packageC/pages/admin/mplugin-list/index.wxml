@@ -1,0 +1,14 @@
+<!--packageC/pages/admin/dash-list/index.wxml-->
+<view style="position:relative;width:100vw;height:504px;">
+<view>
+  <scroll-view type="list" scroll-y >
+    <card card-list="{{list}}" selectable="{{true}}" editable="{{true}}"
+    bind:selected="handleSelected"
+    bind:design="handleDesign"
+    bind:edit="handleEdit"
+    bind:delete="handleDelete"></card>
+  </scroll-view>
+
+</view>
+  <view style="position:fixed;bottom:10px;right:10px;"><van-icon name="add" bindtap="handleAdd"/></view>
+</view>

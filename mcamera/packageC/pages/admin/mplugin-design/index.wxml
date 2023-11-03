@@ -1,0 +1,72 @@
+<view class="design-container">
+  <view style="display:flex;justify-content: center;width:{{width}}px;height:{{height-50}}px;">
+    <textarea value="{{ mplugin.def }}" placeholder="placeholder颜色是红色的" placeholder-style="color:red;"  style="width:{{width-10}}px;height:{{height-50}}px;" class="editor"/>
+  </view>
+  <view style="display: flex;justify-content: center;margin-top:5px;">
+    <van-button type="primary" bindtap="saveDesign">保存</van-button>
+    <van-button type="warning" bindtap="doTest">测试</van-button>
+    <van-button type="info" bindtap="showHelp">指南</van-button>
+  </view>
+  
+</view>
+<plugin-dialog visible="{{helpVisible}}" wx:if="{{helpVisible}}" title="规则编写指南" bindclose="showHelp" hideHead="{{true}}">
+  <van-tabs active="{{active}}" bind:change="onChange">
+    <!-- <van-tab title="Markdown">
+      <view style="height:240px;overflow-y:scroll;">
+        <wemark md="{{md}}" link highlight type="wemark"></wemark>
+      </view>
+    </van-tab> -->
+    <van-tab title="关节点">
+
+      <view style="display: flex;justify-content: space-between;">
+        <image src="/assets/body-steleton.png" style="flex:1;width:100px;height:150px;"/>
+        <view style="flex:3;display: flex;flex-direction:column;height:240px;overflow-y:scroll;">
+          <view wx:for="{{bones}}" style="display: flex;flex-direction:row;">
+            <view style="font:5px;width:24px;">{{item.id}}-</view>
+            <view style="font:5px;width:120px;">{{item.name}}</view>
+            <view style="font:5px;">{{item.label}}</view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="肢体角度">
+      <view style="display: flex;justify-content: space-between;">
+        <image src="/assets/body-steleton.png" style="flex:1;width:100px;height:150px;"/>
+        <view style="flex:3;display: flex;flex-direction:column;height:240px;overflow-y:scroll;">
+          <view wx:for="{{features}}" style="display: flex;flex-direction:column;">
+            <view style="display: flex;flex-direction:row;">
+              <view style="font:5px;width:24px;">{{item.id}}-</view>
+              <view style="font:5px;">{{item.label}}</view>
+            </view>
+            <view style="font:5px;width:120px;">{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="规则入门">
+      <view style="display: flex;flex-direction: column;height:240px;overflow-y:scroll;">
+        <view style="display: flex;flex-direction: column;">
+          <view>插件的定义是基本规则的数组，表示当这些基本规则都满足时，就进行计数或计时</view>
+          <view>任意一个基本规则都是一个三元组：名称name,操作op,取值value。</view>
+          <view>格式如下：</view>
+          <view>{name:'',op:'',value:0.1}</view>
+
+        </view>
+        <view style="display: flex;flex-direction: column;">
+          <view>类型：计时类型</view>
+          <view>规则：[{name:'',op:''},{}]</view>
+        </view>
+
+        <view style="display: flex;flex-direction: column;">
+          <view>类型：计数类型</view>
+          <view>规则：[[{name:'',op:''},{}],[{name:'',op:''},{}]]</view>
+          <view>这个数组第一个元素表示动作计数开始条件，第二个元素表示动作计数完成条件。</view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+
+
+
+
+</plugin-dialog>

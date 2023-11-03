@@ -1,0 +1,36 @@
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{bg}}" style='height:{{height}}'>
+      <block wx:for="{{swiperImages}}" wx:key="index">
+        <swiper-item>
+            <image src="{{item}}" class="slide-image" mode="scaleToFill" bindload='imgH' style="display: block;width:100%;"/>
+        </swiper-item>
+      </block>
+</swiper>
+
+
+
+
+<!-- 推荐课程 -->
+<view style="display: flex;flex-direction: column;margin:20px 0;">
+  <view style="border-radius:10px;padding:0px 10px; margin-left:10px;margin-right:10px;margin-bottom:10px;background-color: #E7EAF7;width:80px;text-align: center;">体验课堂</view>
+  <stackcard card-list="{{recoCardList}}" bind:selected="handleSelected"/>
+</view>
+<view style="display: flex;">
+  <image src="https://gitee.com/hawklink/motionsdk_oss/raw/master/images/notice.png" style="margin: 0px 10px;width:20px;height:20px;"/>
+  <notice style="margin: 0px 10px;flex-basis: 95%;"/>
+</view>
+
+<!-- 今日推荐 -->
+<view>
+  <!-- 标题 -->
+  <view class="title" style="display:flex;justify-content: space-between;margin-top:20px;margin-left:10px;margin-right:10px;">
+    <view style="border-radius:10px;padding:0px 10px; margin: 10px 0px;background-color: #E7EAF7;width:80px;text-align: center;">热门推荐</view>
+    <view bindtap="goCourses" style="display: flex;align-items: center;">
+      <view style="font-size: 14px;">更多</view>
+      <image src="https://gitee.com/hawklink/motionsdk_oss/raw/master/images/more.png" style="width:20px;height:20px;"></image>
+      
+    </view>
+  </view>
+  <!-- 在线课堂 -->
+  <card card-list="{{cardList}}" bind:selected="handleSelected"></card>
+</view>

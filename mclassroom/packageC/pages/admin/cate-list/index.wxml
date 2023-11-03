@@ -1,0 +1,23 @@
+
+<view style="position:relative;width:100vw;height:100vh;">
+  <scroll-view scroll-y type="list">
+    <view wx:for="{{list}}" bindtap="handleSelected" data-item="{{item}}" style="position:relative;">
+      <view style="display:flex;justify-content:space-between;margin:5px 30px;background-color:orange;">
+          <view>编号:{{item.id}}</view>
+          <van-icon name="delete" bindtap="handleDelete" data-id="{{item.id}}"/>
+      </view>
+      <van-cell-group inset>
+        <van-cell title="编码" value="{{item.code}}" />
+        <van-cell title="名称" value="{{item.name}}" />
+      </van-cell-group>
+      <!-- <view class="toolbar">
+        <vant-icon name="edit" data-item="{{item}}" bindtap="handleEdit" />
+        <vant-icon name="delete" data-item="{{item}}" bindtap="handleDelete" />
+      </view> -->
+    </view>
+  </scroll-view>
+  <!--添加按钮-->
+  <view style="position:fixed;bottom:10px;right:10px;">
+    <van-icon name="add" bindtap="handleAdd"/>
+  </view>
+</view>

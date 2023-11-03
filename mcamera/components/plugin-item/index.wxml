@@ -1,0 +1,5 @@
+
+<view style="display:flex;margin:5px 0px;align-items:center;">
+  <image src="/assets/logo1.png" style="width:20px;height:20px;"></image>
+  <view style="margin-left:10px;">title:{{item.title}}</view>
+</view>

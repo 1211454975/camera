@@ -1,0 +1,31 @@
+<view>
+  <van-cell-group inset>
+    <van-cell title="类型" value="{{formData.typeName}}" is-link arrow-direction="down" bind:click="handleType">
+    </van-cell>
+    <van-cell title="名称">
+      <van-field data-type="name" bind:change="formItemChange"
+        model:value="{{ formData.name }}"
+        placeholder="请输入名称"
+        border="{{ false }}"
+      />
+    </van-cell>
+    <van-cell title="内容">
+      <van-field data-type="content" bind:change="formItemChange"
+        model:value="{{ formData.content }}"
+        placeholder="请输入内容"
+        border="{{ false }}"
+      />
+      
+    </van-cell>
+  </van-cell-group>
+  <view style="display: flex;justify-content: center;">
+    <van-button style="margin:50px auto;" type="primary" bindtap="handleSubmit">确定</van-button>
+  </view>
+  <van-action-sheet
+    show="{{ show }}"
+    actions="{{ types }}"
+    bind:close="onClose"
+    bind:select="onSelect"
+  />
+
+</view>

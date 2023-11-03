@@ -1,0 +1,22 @@
+.design-container{
+  position: relative;
+  width:100vw;
+  /* height:calc(100vh-30px); */
+  height:100vh;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+.editor{
+  margin:auto;
+  border:1px solid gray;
+  border-radius: 10px;
+}
+.van-field__control--textarea{
+  text-align:center !important;
+  max-height:450px !important;
+  height: 430px;
+}
+.input-class{
+  height:450px;
+}

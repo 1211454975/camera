@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/courses/index",
+    "pages/mine/base/index",    
+    "pages/mine/audit/index",  
+    "pages/room/index"
+  ],
+  "subPackages": [
+    {
+      "root": "packageC",
+      "pages": [
+        "pages/mine/admin/login/index",
+        "pages/mine/user-edit/index",
+        "pages/mine/account/index",
+        "pages/mine/user-code/index",
+        "pages/mine/user-profile/index",
+        "pages/admin/login/index",
+        "pages/admin/home/index",
+        "pages/admin/cate-add/index",
+        "pages/admin/cate-list/index",
+        "pages/admin/coach-add/index",
+        "pages/admin/coach-list/index",
+        "pages/admin/mcourse-add/index",
+        "pages/admin/mcourse-design/index",
+        "pages/admin/mcourse-list/index",
+        "pages/admin/user-list/index"
+        
+      ]
+    }
+  ],  
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true
+    }
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "demo.theme.json",
+  "tabBar": {
+    "color": "@tabBarColor",
+    "selectedColor": "@tabBarSelectedColor",
+    "borderStyle": "@tabBarBorderStyle",
+    "backgroundColor": "@tabBarBackgroundColor",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "@iconPathComponent",
+        "selectedIconPath": "@selectedIconPathComponent",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/courses/index",
+        "iconPath": "@iconPathComponent",
+        "selectedIconPath": "@selectedIconPathComponent",
+        "text": "课堂"
+      },
+      {
+        "pagePath": "pages/mine/base/index",
+        "iconPath": "@iconPathAPI",
+        "selectedIconPath": "@selectedIconPathAPI",
+        "text": "我的"
+      }
+    ]
+  }
+}

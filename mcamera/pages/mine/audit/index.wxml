@@ -1,0 +1,20 @@
+<view class="cameraContainer">
+  <view class="header">
+    <input type="text" class="search" placeholder="搜一搜 这里啥都有"/>
+    <image src="/static/images/search.png"></image>
+  </view>
+  <view class="tabContainer">
+    <scroll-view class="tabs" enable-flex scroll-x scroll-into-view="{{tabId}}" scroll-with-animation>
+      <view class="tab {{item.id===tabId?'active':''}}" wx:for="{{tabList}}" wx:key="id" 
+            id="{{item.id}}" bindtap="changeTab">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view class="contentContainer" scroll-y refresher-enabled refresher-triggered="{{isTriggered}}"
+      bindrefresherrefresh="handleRefresherRefresh" 
+      bindscrolltolower="handleScrollToLower"
+  >
+    <view class="content" wx:for="{{contentList}}" wx:key="{{index}}">{{item}}</view>
+  </scroll-view>
+</view>

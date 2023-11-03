@@ -1,0 +1,129 @@
+<view class="navigation-bar" style="padding-top: {{statusBarHeight}}px;">
+  <view class="navigation-bar-content {{expand ? 'black' : 'white'}}">
+    <view class="back">ㄑ</view>
+    <view class="search"><view class="search-input">请输入课程名称</view></view>
+    <view class="more"></view>
+  </view>
+</view>
+
+<pan-gesture-handler
+  tag="pan"
+  simultaneousHandlers="{{['scroll-view']}}"
+  shouldResponseOnMove="shouldPanResponse"
+  onGestureEvent="handlePan"
+>
+  <view class="page">
+    <view class="header">
+      <image class="header-banner" src="https://p3.itc.cn/q_70/images03/20201218/e6f445daa0cf4715ad2a452ae09f7029.jpeg"></image>
+      <view class="header-shop-outer">
+        <view class="header-shop-inner">
+          <view class="header-shop-name">课程中心</view>
+          <view class="header-shop-info">
+            <view class="header-shop-info-simple">
+              <view class="header-shop-data">
+                <text>⭐️ 5.0</text><text>66万人看过</text><text>好评度100%</text>
+              </view>
+              <view class="header-shop-coupon">
+                <text>运动元宇宙</text><text>趣味体验</text><text>随时随地</text>
+              </view>
+            </view>
+            <view class="header-shop-info-detail">
+              <view class="header-shop-data">
+                <text>⭐️ 5.0</text><text>66万人学过</text><text>好评度100%</text>
+              </view>
+              <view class="header-shop-tags"><text>跟着教练身临其境体验运动的乐趣！</text></view>
+              <view class="header-shop-coupon">
+                <view class="title">功能简介</view>
+                <view class="header-shop-coupon-item">
+                  <view class="header-shop-coupon-discount">运动元宇宙</view>
+                  <text>在虚实运动空间中，跟着教练一起健身</text>
+                </view>
+                <view class="header-shop-coupon-item">
+                  <view class="header-shop-coupon-discount">趣味体验</view>
+                  <text>通过化身，体验虚拟健身的乐趣</text>
+                </view>
+                <view class="header-shop-coupon-item">
+                  <view class="header-shop-coupon-discount">随时随地</view>
+                  <text>只需要在微信中找到小程序，即可进入虚拟建身空间</text>
+                </view>
+              </view>
+              <view class="header-shop-announcement">
+                <view class="title">公告</view>
+                <view class="header-shop-announcement-content">
+                  「运动课堂」已经上线了，支持几十种不同的类型的健身课堂，随时随地地进行快乐健身运动。不同的教练为您带来不同的虚拟化健身学习体验。<br/>
+                  「运动课堂」提供超过10个细分领域的运动课程。
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="main">
+      <view class="main-banner">
+        <image mode="widthFix" src="https://p3.itc.cn/q_70/images03/20201218/e6f445daa0cf4715ad2a452ae09f7029.jpeg" bind:load="onBannerLoaded"></image>
+      </view>
+      <view class="tabs">
+        <view class="tabs-list">
+          <text bindtap="toggleTab" class="{{tabIndex==0?'tab-selected': ''}}" >课程</text>
+          <text bindtap="toggleTab" class="{{tabIndex==1?'tab-selected': ''}}">教练</text>
+        </view>
+        
+      </view>
+      <!--公共TAB-->
+      <view class="product">
+        <scroll-view scroll-y type="list" style="width:60px;">
+        <view class="product-category">
+          
+            <view wx:for="{{cates}}" wx:key="index" class="product-category-item {{selected === index ? 'selected' : ''}}">{{item.name}}</view>
+          
+          
+        </view>
+      </scroll-view>
+        <vertical-drag-gesture-handler
+          style="width:100%"
+          tag="scroll-view"
+          native-view="scroll-view"
+          simultaneousHandlers="{{['pan']}}"
+          shouldResponseOnMove="shouldScrollViewResponse"
+        >
+          <!-- <scroll-view
+            class="product-list"
+            type="custom"
+            scroll-y
+            show-scrollbar="{{false}}"
+            adjustDecelerationVelocity="adjustDeceleration"
+            bindscroll="handleScroll"
+          > -->
+          <course-list wx:if="{{tabIndex == 0}}" list="{{list}}" style="width:100%;"/>
+          <coach-list wx:else list="{{coachList}}" style="width:100%;"/>
+            
+            
+            
+            
+            <!-- <sticky-section wx:for="{{list}}" wx:key="index">
+              <sticky-header>
+                <view class="product-group">{{item.header}}</view>
+              </sticky-header>
+              <list-view>
+                <view class="product-item" wx:for="{{item.data}}" wx:key="index" wx:for-item="subItem">
+                  <image class="product-image" fade-in src="{{subItem.cover}}"></image>
+                  <view class="product-info">
+                    <view class="product-name">{{subItem.name}}</view>
+                    <view class="product-comment"><text>{{subItem.comment}}</text></view>
+                    <view class="product-data"><text>{{subItem.viewNum}}人看过</text><text>好评度100%</text></view>
+                    
+                  </view>
+                  <view class="product-add-to-cart">+</view>
+                </view>
+              </list-view>
+            </sticky-section> -->
+          <!-- </scroll-view> -->
+        </vertical-drag-gesture-handler>
+      </view>
+
+      <!--我的TAB-->
+
+    </view>
+  </view>
+</pan-gesture-handler>
